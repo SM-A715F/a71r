@@ -9,7 +9,9 @@ if [ ! -d "$(pwd)/llvm-sdclang/" ]; then
    git clone https://github.com/proprietary-stuff/llvm-arm-toolchain-ship-10.0 llvm-sdclang --depth 1 >> /dev/null 2> /dev/null
 fi
 
+
 # Export KBUILD flags
+#!/bin/bash
 export KBUILD_BUILD_USER="Geekmaster21"
 export KBUILD_BUILD_HOST="Geekmaster21"
 
