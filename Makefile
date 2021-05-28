@@ -312,7 +312,7 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/x86/ -e s/x86_64/x86/ \
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
 
 ARCH		?=arm64
-CROSS_COMPILE	?="$(pwd)/gcc/bin/aarch64-linux-android-"
+CROSS_COMPILE	?="/var/lib/buildkite-agent/builds/parallels-Parallels-Virtual-Platform-1/sm7150/true1/gcc/bin/aarch64-linux-android-"
 
 
 # Architecture as present in compile.h
@@ -380,7 +380,7 @@ endif
 AS		= $(CROSS_COMPILE)as
 LD		= $(CROSS_COMPILE)ld
 #REAL_CC		= $(CROSS_COMPILE)gcc
-CC		= "$(pwd)/llvm-sdclang/bin/clang"
+CC		= "/var/lib/buildkite-agent/builds/parallels-Parallels-Virtual-Platform-1/sm7150/true1/llvm-sdclang/bin/clang"
 LDGOLD		= $(CROSS_COMPILE)ld.gold
 CPP		= $(CC) -E
 AR		= $(CROSS_COMPILE)ar
