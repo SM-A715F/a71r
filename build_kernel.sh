@@ -15,7 +15,7 @@ export KBUILD_BUILD_HOST="velosh"
 
 # Export ARCH/SUBARCH flags
 export ARCH="arm64"
-export SUBARCH="arm64"
+export SUBARCH="arm"
 
 # Export ANDROID VERSION
 export PLATFORM_VERSION=11
