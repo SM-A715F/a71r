@@ -377,17 +377,17 @@ HOSTCFLAGS  += -Wno-unused-value -Wno-unused-parameter \
 endif
 
 # Make variables (CC, etc...)
-AS		= $(CC)llvm-as
+AS		= $(CROSS_COMPILE)as
 LD		= $(CROSS_COMPILE)ld
 #REAL_CC		= $(CROSS_COMPILE)gcc
 CC		= "$(pwd)/llvm-sdclang/bin/clang"
 LDGOLD		= $(CROSS_COMPILE)ld.gold
 CPP		= $(CC) -E
-AR		= $(CC)llvm-ar
-NM		= $(CC)llvm-nm
-STRIP		= $(CC)llvm-strip
-OBJCOPY		= $(CC)llvm-objcopy
-OBJDUMP		= $(CC)llvm-objdump
+AR		= $(CROSS_COMPILE)ar
+NM		= $(CROSS_COMPILE)nm
+STRIP		= $(CROSS_COMPILE)strip
+OBJCOPY		= $(CROSS_COMPILE)objcopy
+OBJDUMP		= $(CROSS_COMPILE)objdump
 AWK		= awk
 GENKSYMS	= scripts/genksyms/genksyms
 INSTALLKERNEL  := installkernel
