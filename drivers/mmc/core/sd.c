@@ -1241,9 +1241,6 @@ static void mmc_sd_detect(struct mmc_host *host)
 			udelay(5);
 			continue;
 		}
-
-		if (UNSTUFF_BITS(resp, 13, 1))
-			mmc_card_set_readonly(card);
 		break;
 	}
 	if (!retries) {
