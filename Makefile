@@ -312,7 +312,7 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/x86/ -e s/x86_64/x86/ \
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
 
 ARCH		?=arm64
-CROSS_COMPILE	?=/home/parallels/kernel/toolchain/aarch64-linux-android-4.9/bin/aarch64-linux-android-
+CROSS_COMPILE	?="$(pwd)/gcc/bin/aarch64-linux-android-"
 
 
 # Architecture as present in compile.h
@@ -377,17 +377,17 @@ HOSTCFLAGS  += -Wno-unused-value -Wno-unused-parameter \
 endif
 
 # Make variables (CC, etc...)
-AS		= $(CROSS_COMPILE)as
+AS		= $(CC)llvm-as
 LD		= $(CROSS_COMPILE)ld
 #REAL_CC		= $(CROSS_COMPILE)gcc
-CC		= /home/parallels/kernel/toolchain/qcom10/bin/clang
+CC		= "$(pwd)/llvm-sdclang/bin/clang"
 LDGOLD		= $(CROSS_COMPILE)ld.gold
 CPP		= $(CC) -E
-AR		= $(CROSS_COMPILE)ar
-NM		= $(CROSS_COMPILE)nm
-STRIP		= $(CROSS_COMPILE)strip
-OBJCOPY		= $(CROSS_COMPILE)objcopy
-OBJDUMP		= $(CROSS_COMPILE)objdump
+AR		= $(CC)llvm-ar
+NM		= $(CC)llvm-nm
+STRIP		= $(CC)llvm-strip
+OBJCOPY		= $(CC)llvm-objcopy
+OBJDUMP		= $(CC)llvm-objdump
 AWK		= awk
 GENKSYMS	= scripts/genksyms/genksyms
 INSTALLKERNEL  := installkernel
