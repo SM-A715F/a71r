@@ -1,7 +1,7 @@
 # This is a basic workflow to help you get started with Actions
 
 name: Trigger Buildkite Pipeline
-uses: buildkite/trigger-pipeline-action@v1.2.0
+uses: trigger-pipeline-action@v1.2.0
 
 # Controls when the action will run. 
 on:
